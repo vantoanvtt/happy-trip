@@ -28,4 +28,5 @@ class AppIcons {
   static const IconData dot = Icons.fiber_manual_record;
   static const IconData seeingRoute = Icons.near_me;
   static const IconData call = Icons.call;
+  static const IconData forward2 = Icons.arrow_forward_outlined;
 }

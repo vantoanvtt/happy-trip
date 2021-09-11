@@ -8,6 +8,7 @@ import 'package:happy_trip/screens/transport_details/components/infomation_and_l
 import 'package:happy_trip/screens/transport_details/components/transport_description.dart';
 
 class TransportDetailsScreen extends StatefulWidget {
+  static const routeName = '\TransportDetailsScreen';
   //const TransportDetailsScreen({Key? key}) : super(key: key);
   @override
   _TransportDetailsScreenState createState() => _TransportDetailsScreenState();

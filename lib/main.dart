@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:happy_trip/res/theme_data.dart';
-import 'package:happy_trip/screens/home/home_screen.dart';
-import 'package:happy_trip/screens/transport_details/transport_details_screen.dart';
+import 'package:happy_trip/screens/bottom_bar.dart';
+import 'package:happy_trip/screens/index.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,9 +12,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Happy Trip',
       theme: AppTheme.themeData(context),
-      home: TransportDetailsScreen(),
+      home: BottomBarScreen(),
+      routes: {
+        BottomBarScreen.routeName: (context) => BottomBarScreen(),
+        HomeScreens.routeName: (context) => HomeScreens(),
+        TransportDetailsScreen.routeName: (context) => TransportDetailsScreen(),
+        SavedAndCollectionScreen.routeName: (context) =>
+            SavedAndCollectionScreen(),
+      },
     );
   }
 }

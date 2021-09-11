@@ -3,6 +3,7 @@ import 'package:happy_trip/models/transport_attr.dart';
 import 'package:happy_trip/res/colors.dart';
 import 'package:happy_trip/res/icons.dart';
 import 'package:happy_trip/screens/home/components/x_w_item.dart';
+import 'package:happy_trip/screens/index.dart';
 
 class TripSuggestions extends StatefulWidget {
   const TripSuggestions({Key? key}) : super(key: key);
@@ -99,63 +100,71 @@ class _TripSuggestionsState extends State<TripSuggestions> {
                 itemCount: 5,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (BuildContext context, int index) {
-                  return Column(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 5),
-                        height: 150,
-                        width: 150,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            image: DecorationImage(
-                                image: NetworkImage(
-                                    TransportAttr.dataDemo[index].urlImg),
-                                fit: BoxFit.cover)),
-                        child: Stack(
-                          children: [
-                            Positioned(
-                                top: 0,
-                                left: 0,
-                                child: Container(
-                                  padding: EdgeInsets.all(2),
-                                  decoration: BoxDecoration(
-                                      color: AppColors.orange,
-                                      borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(8),
-                                          bottomRight: Radius.circular(8))),
-                                  child: Text(
-                                      'Giảm ${TransportAttr.dataDemo[index].discount.toString()}%',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          color: AppColors.nearlyWhite),
-                                      textAlign: TextAlign.center),
-                                )),
-                            Positioned(bottom: 20, right: 0, child: Container())
-                          ],
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.of(context)
+                          .pushNamed(TransportDetailsScreen.routeName);
+                    },
+                    child: Column(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.symmetric(horizontal: 5),
+                          height: 150,
+                          width: 150,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              image: DecorationImage(
+                                  image: NetworkImage(
+                                      TransportAttr.dataDemo[index].urlImg),
+                                  fit: BoxFit.cover)),
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                  top: 0,
+                                  left: 0,
+                                  child: Container(
+                                    padding: EdgeInsets.all(2),
+                                    decoration: BoxDecoration(
+                                        color: AppColors.orange,
+                                        borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(8),
+                                            bottomRight: Radius.circular(8))),
+                                    child: Text(
+                                        'Giảm ${TransportAttr.dataDemo[index].discount.toString()}%',
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            color: AppColors.nearlyWhite),
+                                        textAlign: TextAlign.center),
+                                  )),
+                              Positioned(
+                                  bottom: 20, right: 0, child: Container())
+                            ],
+                          ),
                         ),
-                      ),
-                      Container(
-                        width: 150,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              child: Text(
-                                TransportAttr.dataDemo[index].description,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: Theme.of(context).textTheme.bodyText2,
+                        Container(
+                          width: 150,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                child: Text(
+                                  TransportAttr.dataDemo[index].description,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                ),
                               ),
-                            ),
-                            Text(
-                              'VND ${TransportAttr.dataDemo[index].price.toStringAsFixed(3)}',
-                              style: TextStyle(
-                                  fontSize: 17, color: AppColors.nearlyOrange),
-                            )
-                          ],
-                        ),
-                      )
-                    ],
+                              Text(
+                                'VND ${TransportAttr.dataDemo[index].price.toStringAsFixed(3)}',
+                                style: TextStyle(
+                                    fontSize: 17,
+                                    color: AppColors.nearlyOrange),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   );
                 }),
           )

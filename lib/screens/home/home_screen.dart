@@ -10,6 +10,7 @@ import 'package:happy_trip/screens/home/components/trip_suggestions.dart';
 import 'package:happy_trip/screens/home/components/xperi_world.dart';
 
 class HomeScreens extends StatefulWidget {
+  static const routeName = '\HomeScreens';
   const HomeScreens({Key? key}) : super(key: key);
 
   @override
@@ -205,44 +206,6 @@ class _HomeScreensState extends State<HomeScreens> {
             ),
           )
         ],
-      ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(boxShadow: [
-          BoxShadow(color: AppColors.deepGrey.withOpacity(0.4), blurRadius: 10)
-        ]),
-        child: BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(
-                AppIcons.home,
-              ),
-              label: 'Trang chủ',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                AppIcons.saved,
-              ),
-              label: 'Đã lưu',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                AppIcons.notifications,
-              ),
-              label: 'Thông báo',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                AppIcons.account,
-              ),
-              label: 'Tài khoản',
-            ),
-          ],
-          currentIndex: _selectedIndex,
-          selectedItemColor: AppColors.deepPink,
-          unselectedItemColor: AppColors.deepGrey,
-          onTap: _onItemTapped,
-          iconSize: 30,
-        ),
       ),
     );
   }
