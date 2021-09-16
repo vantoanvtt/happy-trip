@@ -21,6 +21,12 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
       {
         'page': SavedAndCollectionScreen(),
       },
+      {
+        'page': NotificationScreen(),
+      },
+      {
+        'page': AccountScreen(),
+      }
     ];
     super.initState();
   }

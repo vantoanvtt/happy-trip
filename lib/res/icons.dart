@@ -29,4 +29,8 @@ class AppIcons {
   static const IconData seeingRoute = Icons.near_me;
   static const IconData call = Icons.call;
   static const IconData forward2 = Icons.arrow_forward_outlined;
+  static const IconData setting = Icons.settings;
+  static const IconData chat = Icons.chat_bubble_outline;
+  static const IconData card = Icons.credit_card_outlined;
+  static const IconData points = Icons.loyalty_outlined;
 }
